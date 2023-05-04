@@ -5,6 +5,7 @@ import br.com.benezinhobank.model.ContaPoupanca;
 import br.com.benezinhobank.pessoa.model.PessoaFisica;
 import br.com.benezinhobank.pessoa.model.PessoaJuridica;
 
+import javax.swing.*;
 import java.time.LocalDate;
 
 public class Main {
@@ -17,8 +18,10 @@ public class Main {
         osasco.setNome("Osasco");
         osasco.setNumero("1-9");
 
+        var nomeMae = JOptionPane.showInputDialog("Informe o nome da mãe");
+
         PessoaFisica mae = new PessoaFisica();
-        mae.setNome("Maria Raquel do Nascimento");
+        mae.setNome(nomeMae);
         mae.setNascimento(LocalDate.of(1946, 10, 9));
         mae.setCPF("213241651-20");
 
@@ -56,6 +59,8 @@ public class Main {
         ccH.setAgencia(osasco);
 
         System.out.println(ccH);
+
+        System.out.println(bene);
 
     }
 }
