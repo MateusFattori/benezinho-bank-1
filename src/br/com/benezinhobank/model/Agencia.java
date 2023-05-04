@@ -43,5 +43,12 @@ public class Agencia {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Agencia{" +
+                "numero='" + numero + '\'' +
+                ", nome='" + nome + '\'' +
+                ", banco=" + banco +
+                '}';
+    }
 }

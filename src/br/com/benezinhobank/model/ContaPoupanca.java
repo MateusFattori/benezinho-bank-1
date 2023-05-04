@@ -2,7 +2,7 @@ package br.com.benezinhobank.model;
 
 import br.com.benezinhobank.pessoa.model.Pessoa;
 
-public class ContaPoupanca extends Conta{
+public class ContaPoupanca extends Conta {
 
     private int aniversario;
 
@@ -10,8 +10,8 @@ public class ContaPoupanca extends Conta{
     public ContaPoupanca() {
     }
 
-    public ContaPoupanca(Agencia agencia, Pessoa titular, double saldo, int aniversario) {
-        super(agencia, titular, saldo);
+    public ContaPoupanca(String numero, Agencia agencia, Pessoa titular, double saldo, int aniversario) {
+        super(numero, agencia, titular, saldo);
         this.aniversario = aniversario;
     }
 
@@ -21,5 +21,13 @@ public class ContaPoupanca extends Conta{
 
     public void setAniversario(int aniversario) {
         this.aniversario = aniversario;
+    }
+
+
+    @Override
+    public String toString() {
+        return "ContaPoupanca{" +
+                "aniversario=" + aniversario +
+                "} " + super.toString();
     }
 }

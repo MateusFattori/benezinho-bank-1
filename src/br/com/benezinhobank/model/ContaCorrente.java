@@ -9,8 +9,8 @@ public class ContaCorrente extends Conta{
     public ContaCorrente() {
     }
 
-    public ContaCorrente(Agencia agencia, Pessoa titular, double saldo, double limite) {
-        super(agencia, titular, saldo);
+    public ContaCorrente(String numero, Agencia agencia, Pessoa titular, double saldo, double limite) {
+        super(numero, agencia, titular, saldo);
         this.limite = limite;
     }
 
@@ -20,5 +20,13 @@ public class ContaCorrente extends Conta{
 
     public void setLimite(double limite) {
         this.limite = limite;
+    }
+
+
+    @Override
+    public String toString() {
+        return "ContaCorrente{" +
+                "limite=" + limite +
+                "} " + super.toString();
     }
 }
