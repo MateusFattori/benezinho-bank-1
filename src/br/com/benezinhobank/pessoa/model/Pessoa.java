@@ -31,4 +31,13 @@ public abstract class Pessoa {
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
+
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", nascimento=" + nascimento +
+                '}';
+    }
 }

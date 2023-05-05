@@ -33,4 +33,13 @@ public class PessoaFisica extends Pessoa {
     public void setMae(PessoaFisica mae) {
         this.mae = mae;
     }
+
+
+    @Override
+    public String toString() {
+        return "PessoaFisica{" +
+                "CPF='" + CPF + '\'' +
+                ", mae=" + mae +
+                "} " + super.toString();
+    }
 }
