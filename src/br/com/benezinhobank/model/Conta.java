@@ -4,8 +4,6 @@ import br.com.benezinhobank.pessoa.model.Pessoa;
 
 public abstract class Conta {
 
-
-
     private String numero;
 
     private Agencia agencia;
@@ -57,6 +55,14 @@ public abstract class Conta {
     public Conta setNumero(String numero) {
         this.numero = numero;
         return this;
+    }
+
+
+    public boolean sacar(double valor) {
+        if (valor <= 0) return false;
+        if (this.saldo < valor) return false;
+        this.saldo = this.saldo - valor;
+        return true;
     }
 
 

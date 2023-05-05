@@ -1,7 +1,7 @@
 package br.com.benezinhobank.pessoa.model;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.Arrays;
 
 public class PessoaJuridica extends Pessoa {
 
@@ -10,16 +10,18 @@ public class PessoaJuridica extends Pessoa {
     private String razaoSocial;
 
 
-    Collection<Pessoa> socios ;
+    private Pessoa[] socios;
+
 
 
     public PessoaJuridica() {
     }
 
-    public PessoaJuridica(String nome, LocalDate nascimento, String CNPJ, String razaoSocial) {
+    public PessoaJuridica(String nome, LocalDate nascimento, String CNPJ, String razaoSocial, Pessoa[] socios) {
         super(nome, nascimento);
-        this.CNPJ = CNPJ;
-        this.razaoSocial = razaoSocial;
+        this.setCNPJ(CNPJ);
+        this.setRazaoSocial(razaoSocial);
+        this.setSocios(socios);
     }
 
     public String getCNPJ() {
@@ -39,11 +41,20 @@ public class PessoaJuridica extends Pessoa {
     }
 
 
+    public Pessoa[] getSocios() {
+        return socios;
+    }
+
+    public void setSocios(Pessoa[] socios) {
+        this.socios = socios;
+    }
+
     @Override
     public String toString() {
         return "PessoaJuridica{" +
                 "CNPJ='" + CNPJ + '\'' +
                 ", razaoSocial='" + razaoSocial + '\'' +
+                ", socios=" + Arrays.toString(socios) +
                 "} " + super.toString();
     }
 }
