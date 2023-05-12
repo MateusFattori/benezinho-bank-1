@@ -81,22 +81,9 @@ public class Main {
 
         holding.addSocio(bene).addSocio(mae).addSocio(lucca);
 
-
-        ContaCorrente ccH = new ContaCorrente();
-        ccH.setNumero("3-7");
-        ccH.setLimite(500);
-        ccH.setSaldo(1000);
-        ccH.setTitular(holding);
-        ccH.setAgencia(osasco);
-
-//        System.out.println(ccH);
-//
-//        System.out.println(bene);
+        ContaCorrente ccH = novaContaCorrente(osasco, holding, 500);
 
 
-        for (int i = 0; i < socios.length; i++) {
-            System.out.println(socios[i]);
-        }
 
         int continua = 0;
         System.out.println("SALDO ANTERIOR: " + ccH.getSaldo());
@@ -106,7 +93,6 @@ public class Main {
         do {
 
             double valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor que deseja sacar"));
-
             boolean saquei = ccH.sacar(valor);
 
             if (saquei) {
